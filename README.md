@@ -14,9 +14,8 @@ Place provision.sh in the same directory as your Vagrantfile. You should then co
 shell provisioning where sh.path refers to provision.sh. Three options are required and must be
 supplied using sh.args in the following order:
 
-1. The directory the Ansible git repository should be cloned into
-2. The Ansible playbook to run
-3. The Ansible hosts inventory file to use
+1. The Ansible playbook to run
+2. The Ansible hosts inventory file to use
 
 An example Vagrantfile is below:
 
@@ -27,7 +26,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :shell do |sh|
     sh.path = "provision.sh"
-    sh.args = "./ansible provisioning/setup.yml provisioning/hosts/dev_hosts"
+    sh.args = "provisioning/setup.yml provisioning/hosts/dev_hosts"
   end
 end
 ```
